@@ -80,6 +80,26 @@ public class MultiDayWriter {
 
 	}
 
+	public void generateCSVFile(String filename) {
+		CSVWriter writer;
+		char dayType = 'A';
+		int dayAdjust = 0;
+		try {
+			writer = new CSVWriter(filename, true);
+			writer.writeHeader();
+			for (CurrentDate c : daysOn) {
+				char currentDayType = (char) (dayType + dayAdjust);
+				if (c.isAfterOrEqual(earlyLimit) && (c.isBefore(lateLimit) || c.equals(lateLimit)))
+					writer.writeDayToFile(currentDayType, c);
+				dayAdjust = (dayAdjust + 1) % 7;
+
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	public void generateICSFile(String filename) {
 		ICSWriter writer;
 		char dayType = 'A';
