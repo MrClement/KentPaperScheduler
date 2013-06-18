@@ -7,6 +7,7 @@ public class CalendarTester {
 	/**
 	 * @param args
 	 */
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		try {
 			CSVWriter test = new CSVWriter("Hi.txt", true);

@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public class ScheduleGeneratorDriver {
 
+	@SuppressWarnings("unused")
 	public ScheduleGeneratorDriver() {
 		CurrentDate startDate = new CurrentDate(8, 21, 2012);
 		CurrentDate endDate = new CurrentDate(5, 24, 2013);
