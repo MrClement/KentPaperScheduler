@@ -24,8 +24,10 @@ public class ScheduleGeneratorDriver {
 		String[] periodNames = { "Period 1", "Period 2", "Technology Department Meeting", "Period 4", "Period 5",
 				"Period 6", "Middle School Robotics" };
 		// specifies the name of the output file
-		writer.generateICSFile("test.txt", periodsToInclude, periodNames, school, singleBox, includeBreaksAndLunch,
-				false);
+		// writer.generateICSFile("test.txt", periodsToInclude, periodNames,
+		// school, singleBox, includeBreaksAndLunch,
+		// false);
+		writer.generateCSVFile("test.txt");
 
 	}
 

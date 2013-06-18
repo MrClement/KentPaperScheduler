@@ -85,12 +85,13 @@ public class MultiDayWriter {
 		char dayType = 'A';
 		int dayAdjust = 0;
 		try {
-			writer = new CSVWriter(filename, true);
+			writer = new CSVWriter(filename, false);
 			writer.writeHeader();
 			for (CurrentDate c : daysOn) {
 				char currentDayType = (char) (dayType + dayAdjust);
 				if (c.isAfterOrEqual(earlyLimit) && (c.isBefore(lateLimit) || c.equals(lateLimit)))
 					writer.writeDayToFile(currentDayType, c);
+
 				dayAdjust = (dayAdjust + 1) % 7;
 
 			}

@@ -83,7 +83,7 @@ public class CSVWriter {
 		old.delete();
 		try {
 			out = new BufferedWriter(new FileWriter(filename, true));
-			out.write("Day Type, Period 1, Period 2, Period 3, Period 4, Period 5, Period 6, Period 7");
+			out.write("Day Type, Period 1, Period 2, Period 3, Period 4, Period 5, Period 6, Period 7, Period 8");
 			out.newLine();
 			out.close();
 		} catch (IOException e) {
@@ -114,6 +114,18 @@ public class CSVWriter {
 			case -7:
 				s = "Lunch";
 				break;
+			case -8:
+				s = "Sports";
+				break;
+			case -6:
+				s = "Study Hall";
+				break;
+			case -10:
+				s = "Class Meetings/Study Hall";
+				break;
+			case -9:
+				s = "Electives";
+				break;
 			default:
 				s = "Period " + periodNumber;
 				break;
@@ -143,6 +155,7 @@ public class CSVWriter {
 					+ adjustTime(periodToPrint.getEndTime(), today, -1) + ", ");
 
 		}
+		out.newLine();
 		out.close();
 
 	}
